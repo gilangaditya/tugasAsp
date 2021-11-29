@@ -1,0 +1,46 @@
+﻿@page
+@model Absensi.Pages.LoginModel
+@{
+        Layout=null;
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" text="type/css">
+        <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <title>Login Page</title>
+    </head>
+    <body>
+        <div class="container" >
+            <div class="row">
+                <div class="col-sm-9 col-lg5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Sign In</h5>
+                            <form action="" class="form-signin" method="post" >
+                                <div class="form-label-group">
+                                    <label asp-for="UserEmail">Email Address</label>
+                                    <input asp-for="UserEmail" type="email" id="UserEmail" class="form-control" placeholder="Email address" required autofocus>        
+                                </div>
+                                <div class="form-label-group">
+                                    <label asp-for="Password">Password</label>
+                                    <input asp-for="Password" type="password" id="Password" class="form-control" placeholder="Password" required>
+                                </div>
+                                <br>
+                                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign In </button>
+                            </form>
+                            <div>
+                                @Model.Message
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="~/lib/jquery-validation/dist/jquery.validation.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.jquery-validation-unobtrusive.js"></script>
+    </body>
+
+</html>
