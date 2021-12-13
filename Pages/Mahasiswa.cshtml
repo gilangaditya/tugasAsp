@@ -16,6 +16,7 @@
                <th>Nama</th>
                <th>Kelas</th>
                <th>Jurusan</th>
+               <th>Action</th>
             </tr>
             @foreach (var item in @Model.DataMahasiswa)
             {
@@ -25,6 +26,11 @@
                     <td>@Html.DisplayFor(m => item.Nama)</td>
                     <td>@Html.DisplayFor(m => item.Kelas)</td>
                     <td>@Html.DisplayFor(m => item.Jurusan)</td>
+                    <td>
+                        <a href="Mahasiswaadd?action=edit&id=@item.Id">Edit</a>
+                        |
+                        <a href="Mahasiswaadd?action=delete&id=@item.Id">Delete</a>
+                    </td>
 
                 </tr>
             }
@@ -69,7 +75,9 @@
         </form>
     </div>
     <br>
+    <br>
     Data Mahasiswa<br>
+    <br>
     @if(TempData["namaMahasiswa"]!=null){
         <div class="form-group">
             Nama: @TempData["namaMahasiswa"];

@@ -29,11 +29,11 @@ namespace Absensi.Pages
         [BindProperty]
 
         public string UserEmail{get; set;}
-        [BindProperty, DataType(DataType.Password)]
+        [BindProperty]
         public string Password{get; set;}
 
         public string Message{get; set;}
-    public async Task<IActionResult> onPostAsync(string returnUrl = null){
+    public async Task<IActionResult> OnPostAsync(){
         var user = configuration.GetSection("User").Get<User>();
 
         if (UserEmail == user.Email)
@@ -49,7 +49,7 @@ namespace Absensi.Pages
                     CookieAuthenticationDefaults.AuthenticationScheme);
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                     new ClaimsPrincipal(claimsIdentity));
-                return RedirectToPage("Index", "home");
+                return RedirectToPage("Latihanbootstrap");
             }
              Message = "Password salah";
         return Page();
